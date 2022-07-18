@@ -101,15 +101,15 @@
 
 
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">İçerik</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                  <label for="exampleFormControlTextarea2">İçerik</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea2" rows="8"></textarea>
                 </div>
 
                 <div class="d-grid gap-2 d-md-block">
-                  <button class="btn btn-primary" type="button">Ekle</button>
+                  <button class="btn btn-primary" onclick="duyuruEkle()" type="button">Ekle</button>
                 </div>
               </form>
-              
+
 
             </div>
           </div>
@@ -127,11 +127,10 @@
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Duyuru Seç</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                  
                 </select>
               </div>
               <div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="button">Sil</button>
+                <button class="btn btn-primary" onclick="duyuruSil()" type="button">Sil</button>
               </div>
             </div>
           </div>
@@ -148,24 +147,19 @@
             <div class="accordion-body">
               <div class="form-group">
                 <label for="exampleFormControlInput1">Ünvan</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea4" rows="1"></textarea>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">İsim</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea5" rows="1"></textarea>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Soy İsim</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea6" rows="1"></textarea>
               </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Bölüm</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  
-                </select>
-              </div>
+
               <div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="button">Ekle</button>
+                <button class="btn btn-primary" onclick="akademisyenEkle()" ontype="button">Ekle</button>
               </div>
 
             </div>
@@ -182,21 +176,21 @@
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="form-group">
-                <label for="exampleFormControlSelect1">Bölüm</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  
+                <label for="exampleFormControlSelect1">İsim-Soyisim</label>
+                <select class="form-control" id="exampleFormControlSelect10">
+
                 </select>
               </div>
               <div class="d-grid gap-2 d-md-block">
-                <button class="btn btn-primary" type="button">Sil</button>
+                <button class="btn btn-primary" onclick="akademisyenSil()" type="button">Sil</button>
               </div>
-              
+
 
             </div>
           </div>
         </div>
-        
-        <div class="accordion-item">
+
+        <!--<div class="accordion-item">
           <h2 class="accordion-header" id="headingSix">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
               data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
@@ -225,7 +219,7 @@
 
             </div>
           </div>
-        </div>
+        </div>-->
 
 
 
@@ -239,15 +233,134 @@
 
 
 
-
-
-
-
   <!-- Footer -->
   <div class="p-4  text-white text-center myfooter"
     style="font-family: 'Times New Roman', Times, serif; background-color: #3d4c6b; ">
     <p>Tahterevalli Üniversitesi - 2022</p>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+
+    function duyuruEkle() {
+      const text = document.getElementById("exampleFormControlTextarea2").value;
+      const title = document.getElementById("exampleFormControlTextarea1").value;
+
+      $.post("http://localhost:8080/add-announcement",
+        {
+          title: title,
+          text: text
+        },
+        function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+
+    }
+
+    function duyuruSil() {
+      const id = document.getElementById("exampleFormControlSelect1").value;
+      $.post("http://localhost:8080/delete-announcement",
+        {
+          id: id,
+        },
+        function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+
+    }
+
+    function akademisyenEkle() {
+      const title = document.getElementById("exampleFormControlTextarea4").value;
+      const name = document.getElementById("exampleFormControlTextarea5").value;
+      const surname = document.getElementById("exampleFormControlTextarea6").value;
+
+      $.post("http://localhost:8080/add-staff",
+        {
+          title: title,
+          name: name,
+          surname: surname
+        },
+        function (data, status) {
+          //alert("Data: " + data + "\nStatus: " + status);
+        });
+
+    }
+
+    function akademisyenSil() {
+      const id = document.getElementById("exampleFormControlSelect10").value;
+      $.post("http://localhost:8080/delete-staff",
+        {
+          id: id,
+        },
+        function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+        });
+    }
+
+
+
+    $(document).ready(function () {
+     /* $.post("http://localhost:8080/is-login", {
+        function(data, status) {
+          if (!data) {
+            window.location.replace(data);
+          }
+        }
+      });*/
+      $.ajax({
+        type: "POST",
+        url: "http://localhost:8080/is-login",
+        async: false,
+        timeout: 3000,
+        success: function (data, textStatus) {
+          if (!data) {
+            window.location.replace("login.html");
+          }
+        }
+      });
+      $.get("http://localhost:8080/display-staff", function (data, status) {
+        var dropdownStaff = document.getElementById("exampleFormControlSelect10");
+        var list = data.responseObject;
+        for (var i = 0; i < list.length; i++) {
+          var option = document.createElement("option");
+          option.value = list[i].id;
+          option.text = list[i].title + "-" + list[i].name + " " + list[i].surname;
+          dropdownStaff.add(option);
+        }
+
+
+        //alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
+    $(document).ready(function () {
+
+      $.get("http://localhost:8080/display-announcement", function (data, status) {
+        var dropdownAnnouncement = document.getElementById("exampleFormControlSelect1");
+        var list = data.responseObject;
+        for (var i = 0; i < list.length; i++) {
+          var option = document.createElement("option");
+          option.value = list[i].id;
+          option.text = list[i].title;
+          dropdownAnnouncement.add(option);
+        }
+
+
+        //alert("Data: " + data + "\nStatus: " + status);
+      });
+    });
+
+
+
+    /*$.post("http://localhost:8080/test2",
+      {
+        title: "Donald Duck",
+        text: "Duckburg"
+      },
+      function (data, status) {
+        //alert("Data: " + data + "\nStatus: " + status);
+      });*/
+
+  </script>
+
 </body>
 
 </html>

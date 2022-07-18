@@ -1,0 +1,137 @@
+.nav-link {
+
+    color: white;
+    font: italic;
+
+}
+
+.myfooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+
+.my-background {
+    background-image: url('https://media.foxbusiness.com/BrightCove/854081161001/202005/2136/854081161001_6155840512001_6155838388001-vs.jpg');
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+    
+}
+
+.mt-6 {
+    margin-top: 6rem !important;
+}
+
+.mt-7 {
+    margin-top: 10rem !important;
+}
+
+.row-tab-animation{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.tab-content{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.section-title{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    line-height: 120%;
+    margin: 20px 0 17px 0;
+    font-size: 2em;
+    border-bottom: solid 1px #ddd;
+    padding-bottom: 15px;
+    margin-top: 100px;
+    color: #000;
+}
+
+.text-center{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    color: #333333;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 8px;
+    line-height: 1.42857143;
+    border-top: 1px solid #ddd;
+    white-space: pre-line;
+    height: 120px;
+    vertical-align: middle;
+}
+
+.nav.nav-tabs.tabs-left{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none !important;
+    position: relative;
+    padding: 10px 15px;
+    line-height: 1.42857143;
+    border-radius: 4px 0 0 4px;
+    margin-right: 0;
+    display: block;
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: #ddd;
+    border-right-color: transparent;
+}
+.ng-click{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    text-align: justify;
+    color: #428bca;
+    box-sizing: border-box;
+    border: 0;
+    vertical-align: middle;
+    height: 990px;
+    width: 700px;
+}   
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+  }

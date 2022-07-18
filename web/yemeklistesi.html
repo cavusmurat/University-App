@@ -1,0 +1,2928 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <link href="assets/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="assets/js/bootstrap.bundle.js" rel="stylesheet">
+
+    <link href="assets/navbarcss/style.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+       <!--=======Header=======-->
+   <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="index.html">TAHTEREVALLİ ÜNİVERSİTESİ</a></h1>
+
+        <a href="index.html" class="logo me-auto"><img
+                src="https://w7.pngwing.com/pngs/358/16/png-transparent-computer-icons-seesaw-desktop-child-angle-child-people.png"
+                alt="" class="img-fluid"></a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto " href="index.html">Anasayfa</a></li>
+                <li><a class="nav-link scrollto" href="hakkımızdauni.html">Hakkımızda</a></li>
+                <li class="dropdown"><a href="bilgiislemdairebaskanligi.html"><span>Bilgi İşlem</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="bilgiislemdairebaskanligi.html">Bilgi İşlem Daire Başkanlığı</a></li>
+                        <li><a href="epostahizmetleri.html">E-Posta Hizmetleri</a></li>
+                        <li><a href="eduroam.html">Eduroam Bilgileri</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown"><a href="ogrenci.html"><span>Öğrenci</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="akademiktakvim.html">Akademik Takvim</a></li>
+                        <li><a href="yemeklistesi.html">Yemek Listesi</a></li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown"><a href="#"><span>Akademik</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="tipfak.html">Tıp Fakültesi</a></li>
+                        <li class="dropdown"><a href="muhfak.html"><span>Mühendislik Fakültesi</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="bilmuh.html">Bilgisayar Mühendisliği</a></li>
+                                <li><a href="endmuh.html">Endüstri Mühendisliği</a></li>
+                                <li><a href="eemuh.html">Elektrik-Elektronik Mühendisliği</a></li>
+                                <li><a href="makmuh.html">Makine Mühendisliği</a></li>
+                                <li><a href="insmuh.html">İnşaat Mühendisliği</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="vetfak.html">Veterinerlik Fakültesi</a></li>
+                        <li><a href="islfak.html">İşletme Fakültesi</a></li>
+                        <li><a href="disfak.html">Diş Hekimliği Fakültesi</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>İletişim</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li>E-mail:Tahterevalli@edu.tr <br />
+                                Telefon: 212 555 55 55 </a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+    </div>
+</header><!-- End Header -->
+    <div class="row tab-animation"  >
+        <div class="col-md-12">
+            <h2 class="section-title ng-binding ng-scope"> Yemek Listesi
+            </h2>
+        </div>
+        <div class="col-xs-3">
+            <ul class="nav nav-tabs tabs-left">
+                
+                <li ng-show="data.ogle.length>1" class="active">
+                    <a data-target="#tab-ogle" data-toggle="tab" ng-click="monu = data.ogle;">Öğle Yemeği
+                    </a>
+                </li>            
+            </ul>
+        </div>
+        <div class="col-xs-9">
+            <div class="tab-content">
+                <!-- ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-kahvalti" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope active" id="tab-ogle" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-aksam" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-kumanya" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-diyet" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-vegan" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+                <div class="tab-pane slide-left ng-scope" id="tab-cocuk" ng-class="{'active': y == 'ogle'}"
+                    ng-repeat="y in list" >
+                    <div class="row">
+                        <!-- ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">05.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Düğün Çorbası
+                                                Etsiz Nohut
+                                                Bulgur Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1017 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">06.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Tavuk Fajita
+                                                Bezelyeli Pirinç Pilavı
+                                                Pembe Güzeli Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1080 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">09.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Kuru Fasulye
+                                                Şehriyeli Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">944 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">10.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kremalı Mantar Çorbası
+                                                Kıymalı Bezelye
+                                                Peynirli Milföy Börek
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1028 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">11.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Ankara Tava
+                                                Zeytinyağlı Barbunya
+                                                Cevizli Un Helvası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1133 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">12.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Soya Soslu Tavuk
+                                                Bulgur Pilavı
+                                                Havuç Salatası</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1006 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">13.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                İzmir Köfte
+                                                Soslu Spagetti
+                                                Elma</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1088 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">16.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Tas Kebabı
+                                                Mısırlı Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1090 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">17.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tutmaç Çorbası
+                                                Patlıcan Musakka
+                                                Soslu Penne Makarna
+                                                Armut</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1020 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">18.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Sebze Çorbası
+                                                Fırın Köfte(Patates Garni)
+                                                Cevizli Erişte
+                                                Yoğurtlu Semizotu</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1069 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">19.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">RESMİ TATİL</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding"> Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">20.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Anadolu Çorbası
+                                                Piliç But(Garnili)
+                                                Gökkuşağı Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1035 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">23.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Etsiz Türlü
+                                                Su böreği
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">919 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">24.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Yayla Çorbası
+                                                Ekşili Köfte
+                                                Soslu Spagetti
+                                                Çoban Salata</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1061 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">25.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Tarhana Çorbası
+                                                Karnıyarık
+                                                Arpa Şehriyeli Pirinç Pilavı
+                                                Cacık</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1075 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">26.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Ezogelin Çorbası
+                                                Piliç Külbastı
+                                                Peynirli Makarna
+                                                Kemalpaşa Tatlısı</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1104 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">27.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Şafak Çorbası
+                                                Kağıt Kebabı
+                                                Pirinç Pilavı
+                                                Yoğurt</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1071 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">30.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Mercimek Çorbası
+                                                Macar Gulaş
+                                                Bulgur Pilavı
+                                                Ayran</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1000 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                        <div class="col-sm-6 col-md-4 col-lg-3 ng-scope" ng-repeat="x in monu">
+                            <section class="monu-container">
+                                <table class="table table-striped no-margin-bottom">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center border-top-none"><b class="ng-binding">31.05.2022</b>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center monu ng-binding">Kaşarlı Domates Çorbası
+                                                Piliç Topkapı
+                                                Zeytinyağlı Enginar
+                                                Fırın Sütlaç</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center ng-binding">1100 Kalori</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div><!-- end ngRepeat: x in monu -->
+                    </div>
+                </div><!-- end ngRepeat: y in list -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="p-4  text-white text-center myfooter"
+        style="font-family: 'Times New Roman', Times, serif; background-color: #3d4c6b; ">
+        <p>Tahterevalli Üniversitesi - 2022</p>
+    </div>
+</body>
+
+</html>
